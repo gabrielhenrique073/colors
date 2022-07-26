@@ -1,47 +1,81 @@
+$mobile: 480px;
+
 body{
     margin: 0px;
-    background-color: #fff;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+    & *:focus{
+        outline: none;
+    }
 
     #app{
+        padding-top: 100px;
+        padding-bottom: 60px;
+        padding-left: 60px;
+        padding-right: 60px;
+
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        gap: 40px;
 
-        section{
+        max-width: 650px;
+
+        transition: opacity 1s;
+
+        &:not([data-created]){
+            opacity: 0;
+        }
+
+        @media screen and (max-width: $mobile){
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        h2{
+            display: block;
+            margin: 0px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 22px;
+            color: #333333;
+        }
+        .colors{
+            gap: 30px;
             display: flex;
-            width: 100%;
-            max-width: 600px;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
+            flex-direction: row;
+            flex-wrap: wrap;
 
-            .colors{
-                display: flex;
-                width: 100%;
-                flex-wrap: wrap;
-                gap: 30px;
-        
-                .color{
-                    flex: 1 0 10%;
-                    min-width: 70px;
-                    aspect-ratio: 1/1;
-                    display: block;
-                    border-radius: 10px;
-                    cursor: pointer;
+            @media screen and (max-width: $mobile){
+                gap: 10px;
+            }
+
+            .color{
+                padding: 0px;
+                width: 80px;
+                transition: filter 150ms;
+                aspect-ratio: 1/1;
+                display: block;
+                border-radius: 10px;
+                cursor: pointer;
+                border: none;
+                align-self: center;
+                justify-self: center;
+                box-sizing: border-box;
+
+                &:active{
+                    filter: brightness(0.9);
                 }
             }
-            .text{
-                display: block;
-                width: 100%;
-                font-family: 'Roboto', sans-serif;
-                font-weight: 400;
-                color: #333333;
-            }
+        }
+        article{
+            display: block;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #333333;
         }
     }
 }
