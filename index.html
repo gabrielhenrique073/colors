@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Colors</title>
+    
+        <link rel="stylesheet" href="/dist/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+
+        <script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script defer>
+            window.addEventListener('load', 
+                () => {
+                    const app = new Vue(
+                        {
+                            el: '#app',
+                            data : {
+                                colors: [
+                                    '#333333',
+                                    '#4F4F4F',
+                                    '#828282',
+                                    '#BDBDBD',
+                                    '#E0E0E0',
+                                    '#F2F2F2',
+                                    '#EB5757',
+                                    '#F2994A',
+                                    '#F2C94C',
+                                    '#219653',
+                                    '#27AE60',
+                                    '#6FCF97',
+                                    '#2F80ED',
+                                    '#2D9CDB',
+                                    '#56CCF2',
+                                    '#9B51E0',
+                                    '#BB6BD9',
+                                ]
+                            }
+                        }
+                    );
+                }
+            );
+        </script>
+    </head>
+    <body>
+        <div id="app">
+            <section>
+                <div class="colors">
+                    <span class="color" v-for="color in colors" :style="{ 'background-color': color }"></span>
+                </div>
+                <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</span>
+            </section>
+        </div>
+    </body>
+</html>

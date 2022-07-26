@@ -1,0 +1,45 @@
+body {
+  margin: 0px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  min-height: 100vh;
+}
+body #app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body #app section {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+body #app section .colors {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+body #app section .colors .color {
+  flex: 1 0 10%;
+  min-width: 70px;
+  aspect-ratio: 1/1;
+  display: block;
+  border-radius: 10px;
+  cursor: pointer;
+}
+body #app section .text {
+  display: block;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #333333;
+}
+
+/*# sourceMappingURL=style.css.map */
